@@ -1,0 +1,114 @@
+name: DemoAltoroJTest
+version: 2
+projectReferences: 
+resources: 
+  - name: .classpath
+    type: com.ibm.rational.test.lt.classpath
+    dependencies: 
+      - path: /DemoAltoroJTest/src
+        type: javaClasspath
+  - name: AltoroJLogin(2).recdata
+  - name: AltoroJLogin(2).recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies: 
+      - path: /DemoAltoroJTest/AltoroJLogin(2).recdata
+        type: recsessionRecdata
+  - name: AltoroJLogin.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 11.0.4.0
+    properties: 
+      features: com.ibm.rational.test.lt.feature.lt
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1F0192574343BF0EBD4B53939373936
+  - name: 'Compound Tests'
+    resources: 
+  - name: Results
+    resources: 
+      - name: demo1_1744634338631.stats
+        type: com.ibm.rational.test.lt.stats.session
+        properties: 
+          startTime: 1744634338631
+          tags: 
+          testId: A1F0192D4AA78280EBD4B53939373936
+          testName: demo1
+        dependencies: 
+          - path: /DemoAltoroJTest/Results/demo1_1744634338631.xmoebreport
+            type: statsSessionAsset
+          - path: /DemoAltoroJTest/Results/demo1_1744634338631_orch!system.mstats
+            type: statsSessionStore
+          - path: /DemoAltoroJTest/Results/demo1_1744634338631_orch!system.rstats
+            type: statsSessionStore
+          - path: /DemoAltoroJTest/Results/demo1_1744634338631_perf!localhost.mstats
+            type: statsSessionStore
+          - path: /DemoAltoroJTest/Results/demo1_1744634338631_perf!localhost.rstats
+            type: statsSessionStore
+          - path: /DemoAltoroJTest/Results/demo1_1744634339228.executiondlr
+            type: statsSessionAsset
+          - path: /DemoAltoroJTest/Tests/demo1.testsuite
+            type: statsSessionTest
+      - name: demo1_1744634338631.xmoebreport
+      - name: demo1_1744634338631_orch!system.mstats
+      - name: demo1_1744634338631_orch!system.rstats
+        type: com.ibm.rational.test.lt.stats.raw
+      - name: demo1_1744634338631_perf!localhost.mstats
+      - name: demo1_1744634338631_perf!localhost.rstats
+        type: com.ibm.rational.test.lt.stats.raw
+      - name: demo1_1744634339228.executiondlr
+      - name: demo1_1744634947603.stats
+        type: com.ibm.rational.test.lt.stats.session
+        properties: 
+          startTime: 1744634947603
+          tags: 
+          testId: A1F0192D4AA78280EBD4B53939373936
+          testName: demo1
+        dependencies: 
+          - path: /DemoAltoroJTest/Results/demo1_1744634947603.xmoebreport
+            type: statsSessionAsset
+          - path: /DemoAltoroJTest/Results/demo1_1744634947603_orch!system.mstats
+            type: statsSessionStore
+          - path: /DemoAltoroJTest/Results/demo1_1744634947603_orch!system.rstats
+            type: statsSessionStore
+          - path: /DemoAltoroJTest/Results/demo1_1744634947603_perf!localhost.mstats
+            type: statsSessionStore
+          - path: /DemoAltoroJTest/Results/demo1_1744634947603_perf!localhost.rstats
+            type: statsSessionStore
+          - path: /DemoAltoroJTest/Results/demo1_1744634947754.executiondlr
+            type: statsSessionAsset
+          - path: /DemoAltoroJTest/Tests/demo1.testsuite
+            type: statsSessionTest
+      - name: demo1_1744634947603.xmoebreport
+      - name: demo1_1744634947603_orch!system.mstats
+      - name: demo1_1744634947603_orch!system.rstats
+        type: com.ibm.rational.test.lt.stats.raw
+      - name: demo1_1744634947603_perf!localhost.mstats
+      - name: demo1_1744634947603_perf!localhost.rstats
+        type: com.ibm.rational.test.lt.stats.raw
+      - name: demo1_1744634947754.executiondlr
+  - name: Tests
+    resources: 
+      - name: demo1.recdata
+      - name: demo1.recsession
+        type: com.ibm.rational.test.lt.recsession
+        dependencies: 
+          - path: /DemoAltoroJTest/Tests/demo1.recdata
+            type: recsessionRecdata
+      - name: demo1.testsuite
+        type: com.ibm.rational.test.lt.test
+        version: 11.0.4.0
+        properties: 
+          features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.mobileweb'
+          type: com.ibm.rational.test.lt.lttest
+          uid: A1F0192D4AA78280EBD4B53939373936
+        dependencies: 
+          - path: /DemoAltoroJTest/Tests/demo1.recsession
+            type: testRecsession
+          - path: /DemoAltoroJTest/estfire_net_e6f.ma
+            type: test#moeb.applicationPackage
+  - name: estfire_net_e6f.ma
+    type: moeb.applicationPackage
+  - name: src
+    resources: 
+      - name: test
+        resources: 
+          - name: Demo1_Test_A1F0192D4AA78280EBD4B53939373936.java
+            type: com.ibm.rational.test.lt.generatedCode
