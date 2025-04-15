@@ -1,0 +1,19 @@
+name: Run DevOps Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    name: Run tests from Test Hub
+    steps:
+      - name: Run test on DevOps Test Hub
+        uses: HCL-TECH-SOFTWARE/rtas-github-action@v1
+        with:
+          serverURL: https://testhub.sbx0003.play.hclsofy.com
+          offlineToken: eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzMmNlYWZiNS05Mjc1LTQyZjctYjA3Mi01NDBjODg3NjU4OTAifQ.eyJpYXQiOjE3NDQ3MDM1OTIsImp0aSI6ImIwYTUwYWU2LWYwODAtNDcxYy04MGJmLWM5OTBmMzZkNzJlNyIsImlzcyI6Imh0dHBzOi8vdGVzdGh1Yi5zYngwMDAzLnBsYXkuaGNsc29meS5jb20vYXV0aC9yZWFsbXMvcGxhdGZvcm0iLCJhdWQiOiJodHRwczovL3Rlc3RodWIuc2J4MDAwMy5wbGF5LmhjbHNvZnkuY29tL2F1dGgvcmVhbG1zL3BsYXRmb3JtIiwic3ViIjoiM2M0MmUxMTItN2MwZi00NzZhLTk2NjgtNDM0ODY0ZTlmMDViIiwidHlwIjoiT2ZmbGluZSIsImF6cCI6InRlc3RzZXJ2ZXIiLCJzaWQiOiJjYzhkNzlhMy1lNDMwLTQ0ZmUtOTIzNi0yMTE5YTg1NzUyYjMiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUgcm9sZXMgYmFzaWMgb2ZmbGluZV9hY2Nlc3MgYWNyIHdlYi1vcmlnaW5zIn0.e7TxRMn3_l2Jc0olFmm1tDv66NX4bYlEH5cenJKjQ3rVXGCKMYCLia9EilJGu1qELtCMNngucG9I5MfpwDHOVw
+          teamspace: Initial
+          project: HCL-DevOps-Test-Hub-First-Project
+          branch: main
+          assetId: demo1.testsuite
