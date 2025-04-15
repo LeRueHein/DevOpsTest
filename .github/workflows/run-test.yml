@@ -7,16 +7,23 @@ on:
 
 jobs:
   run-test:
+    name: Execute RPT test suite manually
     runs-on: ubuntu-latest
-    name: Execute RPT test suite
+
     steps:
-      - name: Trigger DevOps Test Hub
-        uses: Rational-Software/testhub-github-action@v1.1
-        with:
-          serverURL: https://testhub.sbx0003.play.hclsofy.com
-          offlineToken: ${{ secrets.TESTHUB_TOKEN }}
-          teamspace: "Initial"
-          project: "HCL-DevOps-Test-Hub-First-Project"
-          branch: "main"
-          assetId: "Tests/demo1.testsuite"
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Trigger test on DevOps Test Hub
+        run: |
+          curl -X POST "https://testhub.sbx0003.play.hclsofy.com/services/testing/v2/test-executions" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.TESTHUB_TOKEN }}" \
+            -d '{
+              "project": "HCL-DevOps-Test-Hub-First-Project",
+              "teamspace": "Initial",
+              "branch": "main",
+              "assetId": "Tests/demo1.testsuite"
+            }'
+
 
