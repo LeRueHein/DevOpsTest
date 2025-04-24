@@ -1,23 +1,21 @@
 name: DemoAltoroJTest
-version: 3
-projectReferences: 
+version: 2
 resources:
-  - name: TestsFail/demo2.testsuite
-    type: com.ibm.rational.test.lt.test
-    version: 11.0.4.0
-    properties:
-      features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.mobileweb'
-      type: com.ibm.rational.test.lt.lttest
-      uid: A1F0204245571270EBD4B53939373936
-    dependencies:
-      - path: /DemoAltoroJTest/TestsFail/demo2.recsession
-        type: testRecsession
-
-  - name: TestsFail/demo2.recdata
-
-  - name: TestsFail/demo2.recsession
-    type: com.ibm.rational.test.lt.recsession
-    dependencies:
-      - path: /DemoAltoroJTest/TestsFail/demo2.recdata
-        type: recsessionRecdata
-
+  - name: TestsFail
+    resources:
+      - name: demo2.recdata
+      - name: demo2.recsession
+        type: com.ibm.rational.test.lt.recsession
+        dependencies:
+          - path: /DemoAltoroJTest/TestsFail/demo2.recdata
+            type: recsessionRecdata
+      - name: demo2.testsuite
+        type: com.ibm.rational.test.lt.test
+        version: 11.0.4.0
+        properties:
+          features: 'com.ibm.rational.test.lt.feature.lt'
+          type: com.ibm.rational.test.lt.lttest
+          uid: A1F0204245571270EBD4B53939373936
+        dependencies:
+          - path: /DemoAltoroJTest/TestsFail/demo2.recsession
+            type: testRecsession
