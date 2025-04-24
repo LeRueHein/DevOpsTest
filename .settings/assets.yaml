@@ -3,24 +3,6 @@ version: 2
 resources:
   - name: TestsFail
     resources:
-      - name: demo2.recdata
-      - name: demo2.recsession
-        type: com.ibm.rational.test.lt.recsession
-        dependencies:
-          - path: /DemoAltoroJTest/TestsFail/demo2.recdata
-            type: recsessionRecdata
-      - name: demo2.testsuite
-        type: com.ibm.rational.test.lt.test
-        version: 11.0.4.0
-        properties:
-          features: 'com.ibm.rational.test.lt.feature.lt'
-          type: com.ibm.rational.test.lt.lttest
-          uid: A1F0204245571270EBD4B53939373936
-        dependencies:
-          - path: /DemoAltoroJTest/TestsFail/demo2.recsession
-            type: testRecsession
-
-      # Ajout du test faildemo
       - name: faildemo.recdata
       - name: faildemo.recsession
         type: com.ibm.rational.test.lt.recsession
