@@ -19,3 +19,21 @@ resources:
         dependencies:
           - path: /DemoAltoroJTest/TestsFail/faildemo.recsession
             type: testRecsession
+
+      # Ajout du test faildemo
+      - name: faildemo.recdata
+      - name: faildemo.recsession
+        type: com.ibm.rational.test.lt.recsession
+        dependencies:
+          - path: /DemoAltoroJTest/TestsFail/faildemo.recdata
+            type: recsessionRecdata
+      - name: faildemo.testsuite
+        type: com.ibm.rational.test.lt.test
+        version: 11.0.4.0
+        properties:
+          features: 'com.ibm.rational.test.lt.feature.lt'
+          type: com.ibm.rational.test.lt.lttest
+          uid: A1F9999999999999EBD4B53939373936
+        dependencies:
+          - path: /DemoAltoroJTest/TestsFail/faildemo.recsession
+            type: testRecsession
