@@ -1,39 +1,24 @@
 name: DemoAltoroJTest
 version: 2
 resources:
-  - name: TestsFail
+  - name: FailTests
     resources:
-      - name: faildemo.recdata
-      - name: faildemo.recsession
+      - name: DemoFail.recdata
+      - name: DemoFail.recsession
         type: com.ibm.rational.test.lt.recsession
         dependencies:
-          - path: /DemoAltoroJTest/TestsFail/faildemo.recdata
+          - path: /DemoAltoroJTest/FailTests/DemoFail.recdata
             type: recsessionRecdata
-      - name: faildemo.testsuite
+      - name: DemoFail.testsuite
         type: com.ibm.rational.test.lt.test
         version: 11.0.4.0
         properties:
-          features: 'com.ibm.rational.test.lt.feature.lt'
+          features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.mobileweb'
           type: com.ibm.rational.test.lt.lttest
-          uid: A1F9999999999999EBD4B53939373936
+          uid: A1F020F208E1B6F0F707E53966333434
         dependencies:
-          - path: /DemoAltoroJTest/TestsFail/faildemo.recsession
+          - path: /DemoAltoroJTest/FailTests/DemoFail.recsession
             type: testRecsession
+          - path: /DemoAltoroJTest/estfire_net_b04.ma
+            type: test#moeb.applicationPackage
 
-      # Ajout du test faildemo
-      - name: faildemo.recdata
-      - name: faildemo.recsession
-        type: com.ibm.rational.test.lt.recsession
-        dependencies:
-          - path: /DemoAltoroJTest/TestsFail/faildemo.recdata
-            type: recsessionRecdata
-      - name: faildemo.testsuite
-        type: com.ibm.rational.test.lt.test
-        version: 11.0.4.0
-        properties:
-          features: 'com.ibm.rational.test.lt.feature.lt'
-          type: com.ibm.rational.test.lt.lttest
-          uid: A1F9999999999999EBD4B53939373936
-        dependencies:
-          - path: /DemoAltoroJTest/TestsFail/faildemo.recsession
-            type: testRecsession
