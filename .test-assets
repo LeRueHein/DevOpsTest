@@ -1,4 +1,4 @@
 version: 1
 assets:
-  - path: TestsFail/faildemo.testsuite
+  - path: FailTests/DemoFail.testsuite
     type: RPT_SUITE
