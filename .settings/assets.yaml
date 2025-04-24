@@ -1,6 +1,42 @@
 name: DemoAltoroJTest
 version: 2
 resources:
+  - name: AltoroJLogin.recdata
+  - name: AltoroJLogin.recsession
+    type: com.ibm.rational.test.lt.recsession
+    dependencies:
+      - path: /DemoAltoroJTest/AltoroJLogin.recdata
+        type: recsessionRecdata
+  - name: AltoroJLogin.testsuite
+    type: com.ibm.rational.test.lt.test
+    version: 11.0.4.0
+    properties:
+      features: com.ibm.rational.test.lt.feature.lt
+      type: com.ibm.rational.test.lt.lttest
+      uid: A1F0192574343BF0EBD4B53939373936
+    dependencies:
+      - path: /DemoAltoroJTest/AltoroJLogin.recsession
+        type: testRecsession
+
+  - name: Tests
+    resources:
+      - name: demo1.recdata
+      - name: demo1.recsession
+        type: com.ibm.rational.test.lt.recsession
+        dependencies:
+          - path: /DemoAltoroJTest/Tests/demo1.recdata
+            type: recsessionRecdata
+      - name: demo1.testsuite
+        type: com.ibm.rational.test.lt.test
+        version: 11.0.4.0
+        properties:
+          features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.mobileweb'
+          type: com.ibm.rational.test.lt.lttest
+          uid: A1F0192D4AA78280EBD4B53939373936
+        dependencies:
+          - path: /DemoAltoroJTest/Tests/demo1.recsession
+            type: testRecsession
+
   - name: FailTests
     resources:
       - name: DemoFail.recdata
@@ -19,6 +55,4 @@ resources:
         dependencies:
           - path: /DemoAltoroJTest/FailTests/DemoFail.recsession
             type: testRecsession
-          - path: /DemoAltoroJTest/estfire_net_b04.ma
-            type: test#moeb.applicationPackage
 
